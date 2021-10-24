@@ -73,6 +73,21 @@ CREATE TABLE PURCHASE
 	Date				DATE
 );
 
+CREATE TABLE EMPLOYEE
+(
+    ID              INT  PRIMARY KEY,
+    First_name      VARCHAR(20),
+    Last_name       VARCHAR(20),
+    Sec_last_name   VARCHAR(20),
+    Age             INT,
+    Birth_date      DATE,
+    Phone_number    VARCHAR(20),
+	Password		VARCHAR(30),
+	Name_movie_theater  VARCHAR(20),
+	Role			VARCHAR(30),
+	Entry_date		DATE
+);
+
 ALTER TABLE PURCHASE
 ADD CONSTRAINT PURCHASE_CLIENT_FK FOREIGN KEY (ClientId)
 REFERENCES CLIENT(ID);
@@ -113,3 +128,7 @@ REFERENCES PURCHASE (PuRchaseId);
 ALTER TABLE ACTORS
 ADD CONSTRAINT ACTORS_MOVIE_FK FOREIGN KEY (Original_movie_name)
 REFERENCES MOVIE (Original_name);
+
+ALTER TABLE EMPLOYEE
+ADD CONSTRAINT EMPLOYEE_MOVIE_THEATER_FK FOREIGN KEY (Name_movie_theater)
+REFERENCES MOVIE_THEATER(Name);
