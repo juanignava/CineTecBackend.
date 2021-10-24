@@ -20,6 +20,7 @@ namespace CineTecBackend
         public virtual DbSet<Actor> Actors { get; set; }
         public virtual DbSet<Cinema> Cinemas { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<MovieTheater> MovieTheaters { get; set; }
         public virtual DbSet<Purchase> Purchases { get; set; }
@@ -121,6 +122,58 @@ namespace CineTecBackend
                 entity.Property(e => e.SecLastName)
                     .HasMaxLength(20)
                     .HasColumnName("sec_last_name");
+            });
+
+            modelBuilder.Entity<Employee>(entity =>
+            {
+                entity.ToTable("employee");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Age).HasColumnName("age");
+
+                entity.Property(e => e.BirthDate)
+                    .HasColumnType("date")
+                    .HasColumnName("birth_date");
+
+                entity.Property(e => e.EntryDate)
+                    .HasColumnType("date")
+                    .HasColumnName("entry_date");
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(20)
+                    .HasColumnName("first_name");
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(20)
+                    .HasColumnName("last_name");
+
+                entity.Property(e => e.NameMovieTheater)
+                    .HasMaxLength(20)
+                    .HasColumnName("name_movie_theater");
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(30)
+                    .HasColumnName("password");
+
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(20)
+                    .HasColumnName("phone_number");
+
+                entity.Property(e => e.Role)
+                    .HasMaxLength(30)
+                    .HasColumnName("role");
+
+                entity.Property(e => e.SecLastName)
+                    .HasMaxLength(20)
+                    .HasColumnName("sec_last_name");
+
+                entity.HasOne(d => d.NameMovieTheaterNavigation)
+                    .WithMany(p => p.Employees)
+                    .HasForeignKey(d => d.NameMovieTheater)
+                    .HasConstraintName("employee_movie_theater_fk");
             });
 
             modelBuilder.Entity<Movie>(entity =>
