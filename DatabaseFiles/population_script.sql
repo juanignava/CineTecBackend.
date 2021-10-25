@@ -39,10 +39,10 @@ INSERT INTO ACTORS(Original_movie_name, Actor_name)
             ('Black Widow', 'Pugh');
 
 INSERT INTO EMPLOYEE(ID, First_name, Last_name, Sec_last_name, Age, Birth_date, Phone_number, Password, Name_movie_theater, Role, Entry_date)
-	VALUES (50, 'Carlos', 'Montoya', 'Quiros', '30', '1991-10-10', '85659936', 'passwordcarlos', 'Paseo', 'Gerente', '2005-02-09'),
-		   (60, 'Andrea', 'Calderon', 'Martinez', '20', '2001-01-30', '63626566', 'passwordandrea', 'Multiplaza', 'Vendedor', '2020-04-05'),
-		   (70, 'Sebastian', 'Portuguez', 'Meza', '40', '1981-03-03', '68554142', 'passwordsebastian', 'CineMark', 'Conserje', '2014-02-02'),
-		   (80, 'Andrey', 'Vega', 'Munoz', '50', '1971-10-01', '87855525', 'passwordandrey', 'Paseo', 'Vendedor', '2013-09-08');
+	VALUES (50, 'Carlos', 'Montoya', 'Quiros', '30', '1991-10-10', '85659936', 'passwordcarlos', 'Paseo', 'Manager', '2005-02-09'),
+		   (60, 'Andrea', 'Calderon', 'Martinez', '20', '2001-01-30', '63626566', 'passwordandrea', 'Multiplaza', 'Technician', '2020-04-05'),
+		   (70, 'Sebastian', 'Portuguez', 'Meza', '40', '1981-03-03', '68554142', 'passwordsebastian', 'CineMark', 'Janitor', '2014-02-02'),
+		   (80, 'Andrey', 'Vega', 'Munoz', '50', '1971-10-01', '87855525', 'passwordandrey', 'Paseo', 'Cashier', '2013-09-08');
 
 
 INSERT INTO SCREENING(Id, Cinema_number, Movie_original_name, Hour, Capacity)
