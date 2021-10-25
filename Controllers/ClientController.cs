@@ -75,6 +75,7 @@ namespace CineTecBackend.Controllers
             itemToUpdate.Age = client.Age;
             itemToUpdate.PhoneNumber = client.PhoneNumber;
             itemToUpdate.Password = client.Password;
+            itemToUpdate.BirthDate = client.BirthDate;
             // save the changes in the databse
             await _context.SaveChangesAsync();
             return Ok();
