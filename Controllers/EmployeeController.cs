@@ -73,11 +73,9 @@ namespace CineTecBackend.Controllers
             itemToUpdate.LastName = employee.LastName;
             itemToUpdate.SecLastName = employee.SecLastName;
             itemToUpdate.Age = employee.Age;
-            itemToUpdate.BirthDate = employee.BirthDate;
             itemToUpdate.PhoneNumber = employee.PhoneNumber;
             itemToUpdate.Password = employee.Password;
             itemToUpdate.Role = employee.Role;
-            itemToUpdate.EntryDate = employee.EntryDate;
             // save the changes in the databse
             await _context.SaveChangesAsync();
             return Ok();
